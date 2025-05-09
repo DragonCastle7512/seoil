@@ -22,11 +22,9 @@ flex속성 - 컨테이너 공간에 맞춤<br>
 li태그에 flex를 적용하면, 가로로 나열 가능<br>
 코드 내에서 줄바꿈을 하게되면, 간격으로 적용됨<br>
 따라서<br>
-1.<br>
 ```
 <li>menu1</li><li>menu2</li>
 ```
-2.<br>
 ```
 <li>menu1</li>
 <li>menu2</li>
