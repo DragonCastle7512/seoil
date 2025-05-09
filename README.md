@@ -28,8 +28,8 @@ li태그에 flex를 적용하면, 가로로 나열 가능<br>
 ```
 2.<br>
 ```
-#<li>menu1</li>
-#<li>menu2</li>
+<li>menu1</li>
+<li>menu2</li>
 ```
 (menu1과 menu2 사이에 간격 존재)<br>
 두 코드는 다름<br><br>
@@ -38,9 +38,9 @@ li태그에 flex를 적용하면, 가로로 나열 가능<br>
 웹의 기본 동작 원리<br>
 서버에 request(요청) 클라이언트에 response(응답)<br>
 db에 접속하기 위해 필요한 3가지<br>
-1.url<br>
-2.id<br>
-3.password<br>
+- url<br>
+- id<br>
+- password<br>
 Class.forName() - 데이터베이스 불러오기<br>
 DriverManager.getConnection() - 연결<br>
 PreParedStatment() - 요청 사항 설정(sql)<br>
