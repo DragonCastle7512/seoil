@@ -38,15 +38,20 @@ li태그에 flex를 적용하면, 가로로 나열 가능<br>
 웹의 기본 동작 원리<br>
 서버에 request(요청) 클라이언트에 response(응답)<br>
 db에 접속하기 위해 필요한 3가지<br>
-- url<br>
-- id<br>
-- password<br>
+```
+url
+id
+password
+```
+DB 연결 과정
+```
 Class.forName() - 데이터베이스 불러오기<br>
 DriverManager.getConnection() - 연결<br>
 PreParedStatment() - 요청 사항 설정(sql)<br>
 executeQuery - 요청<br>
 ResultSet - 응답 결과 저장<br>
 html 레이아웃의 기본 구조<br>
+```
 ```
 <header>
 <nav>
