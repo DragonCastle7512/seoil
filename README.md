@@ -23,14 +23,14 @@ li태그에 flex를 적용하면, 가로로 나열 가능<br>
 코드 내에서 줄바꿈을 하게되면, 간격으로 적용됨<br>
 따라서<br>
 1.<br>
-'''
+```
 <li>menu1</li><li>menu2</li>
-'''
+```
 2.<br>
-'''
+```
 #<li>menu1</li>
 #<li>menu2</li>
-'''
+```
 (menu1과 menu2 사이에 간격 존재)<br>
 두 코드는 다름<br><br>
 
@@ -47,9 +47,9 @@ PreParedStatment() - 요청 사항 설정(sql)<br>
 executeQuery - 요청<br>
 ResultSet - 응답 결과 저장<br>
 html 레이아웃의 기본 구조<br>
-'''
+```
 <header>
 <nav>
 <main> - section, article, aside 포함
 <footer>
-'''
+```
