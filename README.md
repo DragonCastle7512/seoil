@@ -23,27 +23,33 @@ li태그에 flex를 적용하면, 가로로 나열 가능<br>
 코드 내에서 줄바꿈을 하게되면, 간격으로 적용됨<br>
 따라서<br>
 1.<br>
-#<li>menu1</li><li>menu2</li>
+'''
+<li>menu1</li><li>menu2</li>
+'''
 2.<br>
+'''
 #<li>menu1</li>
 #<li>menu2</li>
+'''
 (menu1과 menu2 사이에 간격 존재)<br>
 두 코드는 다름<br><br>
 
-5/9
-웹의 기본 동작 원리
-서버에 request(요청) 클라이언트에 response(응답)
-db에 접속하기 위해 필요한 3가지
-1. url
-2. id
-3. password
-Class.forName() - 데이터베이스 불러오기
-DriverManager.getConnection() - 연결
-PreParedStatment() - 요청 사항 설정(sql)
-executeQuery - 요청
-ResultSet - 응답 결과 저장
-html 레이아웃의 기본 구조
+5/9<br>
+웹의 기본 동작 원리<br>
+서버에 request(요청) 클라이언트에 response(응답)<br>
+db에 접속하기 위해 필요한 3가지<br>
+1. url<br>
+2. id<br>
+3. password<br>
+Class.forName() - 데이터베이스 불러오기<br>
+DriverManager.getConnection() - 연결<br>
+PreParedStatment() - 요청 사항 설정(sql)<br>
+executeQuery - 요청<br>
+ResultSet - 응답 결과 저장<br>
+html 레이아웃의 기본 구조<br>
+'''
 <header>
 <nav>
 <main> - section, article, aside 포함
 <footer>
+'''
