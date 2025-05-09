@@ -16,10 +16,10 @@ html 문서는 head와 body로 구성된다.<br>
 내용물의 구성요소: 색깔, 굵기, 크기를 가지고 있고, 좌우 정렬과 세로정렬이 가능<br>
 display 속성
 ```
-block - 크기를 정할 수 있음, 한 줄 차지(p, div 등)<br>
-inline - 크기를 정할 수 없음 내용물의 크기에 자동 맞춤(a, span 등)<br>
-inline-block - 크기를 정할 수 있음 width, height에 따른 블럭 크기만큼 차지<br>
-flex - 컨테이너 공간에 맞춤<br>
+block - 크기를 정할 수 있음, 한 줄 차지(p, div 등)
+inline - 크기를 정할 수 없음 내용물의 크기에 자동 맞춤(a, span 등)
+inline-block - 크기를 정할 수 있음 width, height에 따른 블럭 크기만큼 차지
+flex - 컨테이너 공간에 맞춤
 ```
 li태그에 flex를 적용하면, 가로로 나열 가능<br>
 코드 내에서 줄바꿈을 하게되면, 간격으로 적용됨<br>
