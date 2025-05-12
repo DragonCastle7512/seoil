@@ -18,3 +18,15 @@ html 레이아웃(header, nav, footer 등)
 웹 크기 고정값과 가변값 처리
 레이아웃 배치 연습
 ```
+### 5/12
+```
+텍스트 포메팅 요소(<b>, <i> 등)
+html, style, javascript 주석처리
+외부파일 불러오기
+이미지 관련 태그(<img>, <picture> 등)
+favicon 적용
+테이블 다루기
+flex-direction을 활용한 레이아웃
+media 쿼리 다루기
+메뉴바 레이아웃 구성 실습
+```
