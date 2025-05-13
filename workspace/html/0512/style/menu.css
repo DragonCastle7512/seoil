@@ -1,0 +1,66 @@
+a {
+    text-decoration: none;
+    color:white;
+}
+nav {
+    background-color:#263343;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar_logo {
+    color:white;
+    font-size: 30px;
+    display: flex;
+    list-style-type: none;
+    margin: 20px;
+}
+.logo_image {
+    width: 70px;
+}
+.navbar_logo > i {
+    font-size: 30px;
+}
+
+.navbar_logo > a {
+    font-size: 10px;
+}
+.navbar_menu {
+    list-style-type: none;
+    display: flex;
+    font-size: 25px;
+}
+
+.navbar_menu li {
+    padding:8px 16px;
+}
+.navbar_icon{
+    list-style-type: none;
+    display: flex;
+    margin: 20px;
+}
+
+.navbar_icon li{
+    padding:8px 8px;
+}
+
+nav{
+    align-items: center; /* logo를 세로중앙정렬 */
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+.navbar_menu li:hover{
+    background-color: orange;
+}
+
+@media screen and (max-width:600px){
+    nav{
+        flex-direction: column;
+    }
+    .navbar_menu{
+        flex-direction: column;
+    }
+}

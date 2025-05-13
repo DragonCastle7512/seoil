@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {background-color: #c8e6c9;}
+        header {
+            background-color: #2e7d32;
+        }
+        nav {background-color: #388e3c;}
+        aside {
+            background-color: #43a047;
+            width: 20%;
+        }
+        section {
+            background-color: #4caf50;
+            width: 80%;
+        }
+        footer {background-color: #66bb6a;}
+        .common {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .single {
+            width: 80%;
+            height: 10%;
+        }
+        .main {
+            display: flex;
+            width: 80%;
+            height: 70%;
+        }
+        .element {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="common single">header</header>
+    <nav class="common single">nav</nav>
+    <div class="main common">
+        <aside class="common element">aside</aside>
+        <section class="common element">contents</section>
+    </div>
+    <footer class="common single">footer</footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- html문서는 head와 body로 구성된다. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- tag는 태그명과 속성-값으로 이루어져 있다. -->
+    <div id="title" class="title" style="border:1px solid red">html 처음 시작합니다.</div>
+    <!-- 
+        태그는 네모박스이다.
+        네모박스는 너비(width) 높이(height)로 구성
+        네모박스는 테두리(border), 배경(background), 내용물(font)로 구성이 된다.
+        테두리는 모양, 굵기, 색깔을 가지고 있다.
+        배경은 모양, 색깔을 가지고 있다.
+        내용물은 색깔, 굵기, 크기를 가지고 있다.
+        내용물은 좌우 정렬과 세로정렬로 구성된다.
+    -->
+    <!-- 
+        id는 단일 태그를(# 사용, 중복 불가)
+        class 태그(.사용, 중복 가능)
+    -->
+        <div id="content">
+            content
+        </div>
+        <style>
+            /* 
+                선택자
+                div
+                content
+                .div
+            */
+            #content {
+                width: 300px;
+                height: 200px;
+                border: 5px solid green;
+                background-color: yellow;
+                color: red;
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+                line-height: 200px;
+            }
+        </style>
+</body>
+</html>
