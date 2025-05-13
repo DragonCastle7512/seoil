@@ -30,3 +30,15 @@ flex-direction을 활용한 레이아웃
 media 쿼리 다루기
 메뉴바 레이아웃 구성 실습
 ```
+### 5/13
+```
+메뉴바 다시 구현
+semantics 레이아웃 복습
+form 다루기+속성 다루기(<legend>, <input>, <select> 등)
+get방식과 post방식의 차이
+<input>태그의 다양한 type 속성
+onclick속성과 <script>
+html 요소 스크립트로 가져오기(getElementById, querySelector)
+스크립트 코드내에서 디스플레이 다루기(createElement)
+for문 활용하여 반복화
+```
