@@ -15,7 +15,7 @@ nav {
     margin: 20px;
 }
 .logo_image {
-    width: 70px;
+    width: 50px;
 }
 .navbar_logo > i {
     font-size: 30px;
@@ -31,19 +31,19 @@ nav {
 }
 
 .navbar_menu li {
-    padding:8px 16px;
+    padding:30px 16px;
 }
-.navbar_icon{
+.navbar_icon {
     list-style-type: none;
     display: flex;
     margin: 20px;
 }
 
-.navbar_icon li{
+.navbar_icon li {
     padding:8px 8px;
 }
 
-nav{
+nav {
     align-items: center; /* logo를 세로중앙정렬 */
 }
 
@@ -52,15 +52,20 @@ nav{
     padding:0;
 }
 
-.navbar_menu li:hover{
+.navbar_menu li:hover, .navbar_menu li a:hover {
     background-color: orange;
 }
 
-@media screen and (max-width:600px){
-    nav{
+@media screen and (max-width:600px) {
+    nav {
         flex-direction: column;
     }
-    .navbar_menu{
+    .navbar_menu {
         flex-direction: column;
+        width: 100%;
     }
+    .navbar_menu li {
+        text-align: center;
+    }
+
 }
