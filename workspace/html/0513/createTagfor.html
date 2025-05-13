@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="블럭모드로 변경" onclick="blockmode()">
+    <input type="button" value="flex모드로 변경" onclick="flexmode()">
+</body>
+<script>
+    var main = document.querySelector("body");
+    console.log(main);
+    main.style.display = "flex";
+    main.style.flexWrap = "wrap";
+    function blockmode() {
+        main.style.display = "block";
+    }
+    function flexmode() {
+        main.style.display = "flex";
+    }
+    //초기화, 제어, 증가
+    for (let i = 0; i < 10; i++) {
+        var div = document.createElement("div");
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.style.backgroundColor = "red";
+        div.style.margin = "5px 5px";
+        div.textContent = i+1;
+        div.style.fontSize = "25px";
+        div.style.textAlign = "center";
+        main.appendChild(div);
+    }
+</script>
+</html>

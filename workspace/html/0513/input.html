@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>전화번호부 입력 폼</legend>
+        <form action="input_proc.html" method="post">
+            <div>
+                <label for="name">이름</label>
+                <input for="text" name="name" id="name" placeholder="이름을 입력하세요.">
+            </div>
+            <div>
+                <label for="name">전화번호</label>
+                <input for="text" name="tel" id="tel" placeholder="전화번호을 입력하세요.">
+            </div>
+            <div>
+                <label for="name">이메일</label>
+                <input for="email" name="email" id="email" placeholder="이메일을 입력하세요.">
+            </div>
+            <input type="submit" value="전화번호부 입력">
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>로그인 폼</legend>
+        <form action="login_proc.html" method="post">
+            <input type="text" name="id" id="id" placeholder="아이디"><p>
+            <input type="text" name="password" id="password" placeholder="비밀번호"><p>
+            <input type="submit" value="로그인">
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>etc 폼</legend>
+        <p>다음중 마크업 언어로 화면을 표시하는 언어는?</p>
+        <input type="radio" name="one" id="question" value="1" checked>1.html<br>
+        <input type="radio" name="one" id="question" value="2">2.java<br>
+        <input type="radio" name="one" id="question" value="3">3.css<br>
+        <input type="radio" name="one" id="question" value="4">4.javascript<br>
+    </fieldset>
+    <fieldset>
+        <legend>select-option 폼</legend>
+        취미 선택
+        <select name="habit"> <!-- multiple-다중선택 가능 -->
+            <option value="운동">운동</option>
+            <option value="독서">독서</option>
+            <option value="컴퓨터">컴퓨터</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>checkbox 폼</legend>
+        취미 선택
+        <input type="checkbox" name="habit" id="habit">운동
+        <input type="checkbox" name="habit" id="habit">독서
+        <input type="checkbox" name="habit" id="habit">컴퓨터
+        <input type="checkbox" name="habit" id="habit">음악
+        <input type="button">
+    </fieldset>
+    <fieldset>
+        <legend>기타 input</legend>
+        색선택:<input type="color"><br>
+        날짜선택:<input type="date"><br>
+        날짜시간:<input type="datetime-local"><br>
+        파일:<input type="file"><br>
+        숨김:<input type="hidden"><br>
+        이미지:<input type="image"><br>
+        월:<input type="month"><br>
+        숫자:<input type="number"><br>
+        범위:<input type="range"><br>
+        폼 리셋:<input type="reset"><br>
+        검색:<input type="search"><br>
+        전화번호:<input type="tel"><br>
+        시간:<input type="time"><br>
+        주소:<input type="url"><br>
+        주 선택:<input type="week"><br>
+        여러 줄의 편집창<br>
+        <textarea cols="30" role="10"></textarea>
+    </fieldset>
+</body>
+</html>
