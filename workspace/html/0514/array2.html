@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            align-items: center;
+        }
+        .newscom {
+            width: 130px;
+            height: 70px;
+            border: 1px solid gray;
+            text-align: center;
+            align-content: center;
+        }
+        .newcom:hover {
+            background-color: blue;
+            color: white;
+        }
+        a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        
+    </div>
+    <script>
+        var data = ["서울신문", "프레시인", "MBC", "MBN", "경향신문", "한거래", "스포츠조선", "JTBC"];
+        const box = document.getElementById("box");
+        for (const d of data)
+            box.innerHTML += `<div class="newscom">${d}</div>`;
+
+        const newscom = document.getElementsByClassName("newscom");
+        for(let i = 0; i < data.length; i++) {
+            newscom[i].addEventListener("mouseover", (event) => {
+                console.log(event.target);
+                console.log(event.target.textContent);
+                event.target.innerHTML ="구독 | 가사보기";
+                event.target.style.backgroundColor = "blue";
+                event.target.style.color = "white";
+            })
+        }
+        for(let i = 0; i < data.length; i++) {
+            newscom[i].addEventListener("mouseout", (event) => {
+                console.log(event.target);
+                console.log(event.target.textContent);
+                event.target.textContent = data[i];
+                event.target.style.backgroundColor = "white";
+                event.target.style.color = "black";
+            })
+        }
+    </script>
+</body>
+</html>

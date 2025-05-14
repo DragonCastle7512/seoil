@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+          padding: 200px 500px;
+        }
+        .login {
+            width: 50%;
+            border-radius: 20px;
+            transition: transform 3s;
+            margin: 20px 20px;
+            padding: 40px 40px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+        }
+        li {
+            align-items: center;
+            display: flex;
+        }
+        .top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .bottom {
+            border-top: none;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        input {
+            height: 50px;
+
+        }
+        .mainInput {
+            width: 100%;
+        }
+        .submit {
+            border-radius: 10px;
+        }
+        .submit:hover, button:hover {
+            background-color: gainsboro;
+        }
+        .mode {
+            margin-top: 20px;
+        }
+        .mode li button {
+            width: 200px;
+            height: 50px;
+        }
+        .toggle {
+            width: 50px;
+            margin-left: 5px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset class="login">
+
+            <input type="text" placeholder=" 아이디 또는 전화번호" class="mainInput top"><br>
+            <input type="text" placeholder=" 비밀번호" class="mainInput bottom"><br>
+            <ul class="box">
+                <li><input type="checkbox"><label>로그인 상태 유지</label></li>
+                <li><label>IP보안</label><button class="toggle">Off</button></li>
+            </ul>
+            <input type="submit" value="로그인" class="mainInput submit">
+            <ul class="mode">
+                <li><button class="mode1">관리자 모드</button></li>
+                <li><button class="mode2">사용자 모드</button></li>
+            </ul>
+
+    </fieldset>
+    <script>
+        const login = document.getElementsByClassName("login");
+        const btn = document.getElementsByClassName("mode1");
+        btn[0].addEventListener("click", () => {
+            login[0].style.transform = "rotateY(360deg)";
+        })
+        const togglebtn = document.getElementsByClassName("toggle");
+        togglebtn[0].addEventListener("click", () => {
+            togglebtn[0].style.backgroundColor = "lime";
+            togglebtn[0].innerText = "On";
+        })
+    </script>
+</body>
+</html>
