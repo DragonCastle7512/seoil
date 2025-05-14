@@ -42,3 +42,13 @@ html 요소 스크립트로 가져오기(getElementById, querySelector)
 스크립트 코드내에서 디스플레이 다루기(createElement)
 for문 활용하여 반복화
 ```
+### 5/14
+```
+position 속성
+animation 속성과 keyframes 쿼리
+transition과 transfrom 속성
+word-wrap과 overflow-wrap 속성
+익명 함수와 이벤트리스너
+innerHTML와 반복문
+네이버 로그인 및 뉴스 UI 구현
+```
