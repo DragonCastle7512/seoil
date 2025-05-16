@@ -52,3 +52,11 @@ word-wrap과 overflow-wrap 속성
 innerHTML와 반복문
 네이버 로그인 및 뉴스 UI 구현
 ```
+### 5/16
+```
+figma 다루기
+figma 사용하여 모바일 UI 구성해보기
+html, css, js파일 분리
+javascript foreach
+fetch.then()
+```
