@@ -60,3 +60,10 @@ html, css, js파일 분리
 javascript foreach
 fetch.then()
 ```
+### 5/19
+```
+json 작성법
+javascript에서 json 데이터 수신 및 변환
+cookie, localStorage, seesionStorage를 사용하여 정보를 저장하는 방법
+figma로 구성한 UI 구현
+```
