@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let body = document.querySelector("body");
+        let s = ["kim", "lee", "hong", "park", "ryu"];
+        for (let i = 0; i < s.length; i++)
+            body.innerHTML += `<a href="findproc.html?id=${i+1}">${s[i]}</a> `;
+    </script>
+    <!-- 
+    <a href="findproc.html?id=1">kim</a>
+    <a href="findproc.html?id=2">lee</a>
+    <a href="findproc.html?id=3">hong</a>
+    <a href="findproc.html?id=4">park</a>
+    <a href="findproc.html?id=5">ryu</a> -->
+</body>
+</html>

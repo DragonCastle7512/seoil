@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //const URL_PARAM = new URLSearchParams(location.href);
+        const URL_PARAM = new URLSearchParams(location.search);
+        console.log(URL_PARAM);
+        let id = parseInt(URL_PARAM.get("id"));
+        console.log(id);
+        let xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("get", "data2.json");
+        xmlHttp.send();
+        xmlHttp.onreadystatechange = function() {
+            if(xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                try {
+                    var data = JSON.parse(xmlHttp.responseText);
+                    data.forEach(element => {
+                        if(element.id === id) {
+                            console.log(element);
+                            console.log(element.id);
+                            console.log(element.pic);
+                            console.log(element.name);
+                            console.log(element.hp);
+                            return;
+                        }
+                    });
+                }
+                catch(e) {
+                    console.log(e);
+                }
+            }
+        }
+        //쿠키를 사용하여 정보를 저장하는 방법
+        document.cookie = `id=${id}; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/`;
+        //localStorage를 사용하여 정보를 저장하는 방법
+        localStorage.setItem("local_id", id);
+        //sessionStorage를 사용하여 정보를 저장하는 방법
+        sessionStorage.setItem("session_id", id);
+    </script>
+</head>
+<body>
+    <a href="findprocmove.html">다른 페이지로 이동</a>
+</body>
+</html>

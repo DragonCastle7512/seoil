@@ -1,0 +1,7 @@
+[
+    {"pic":"kim.jpg", "name":"kim", "hp":"010-1111-1111"},
+    {"pic":"lee.jpg", "name":"lee", "hp":"010-1111-2222"},
+    {"pic":"hong.jpg", "name":"hong", "hp":"010-1111-3333"},
+    {"pic":"park.jpg", "name":"park", "hp":"010-1111-4444"},
+    {"pic":"ryu.jpg", "name":"ryu", "hp":"010-1111-5555"}
+]
