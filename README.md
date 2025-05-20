@@ -67,3 +67,14 @@ javascript에서 json 데이터 수신 및 변환
 cookie, localStorage, seesionStorage를 사용하여 정보를 저장하는 방법
 figma로 구성한 UI 구현
 ```
+### 5/20
+```
+javascript 객체와 문자열
+객체 생성과 접근법
+json 파일 html에 작성
+json에 작성된 특정 문자열 찾기
+정규식을 사용하여 문자열 찾도록 수정
+table에 createElement를 사용하여 행 추가
+bootstrap cdn 추가 해보기
+외부 json파일을 읽어 테이블에 추가해보기
+```
