@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="find.js"></script> -->
+    <style>
+        button {
+            padding-left: 10px;
+            padding-right : 10px;
+        }
+        #selectList {
+            width: 500px;
+            height: 600px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            책 찾기: <input type="text" id="inputBox">
+            <button onclick="search()">찾기</button>
+        </div>
+        <div>
+            <ul id="selectList">
+                <li>XX</li>
+                <li>XX</li>
+                <li>XX</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function search() {
+            let xmlHttp = new XMLHttpRequest;
+            xmlHttp.open("get", "books.json");
+            xmlHttp.send();
+            xmlHttp.onload = function() {
+                let books = JSON.parse(xmlHttp.responseText);
+                // let list = document.getElementById("selectList");
+                let ul = document.querySelector("#selectList");
+                console.log(ul);
+                // console.log(list);
+                let textbox = document.getElementById("inputBox").value;
+                var result = books.find(book => book.title === textbox);
+                let idx = 1;
+                ["title", "author", "price"].forEach(e => {
+                    ul.querySelector(`li:nth-child(${idx++})`).textContent = `${e}: ${result[e]}`;
+                });
+            }
+        }
+    </script>
+</body>
+</html>
