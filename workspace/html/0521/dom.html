@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+        let all = document.querySelectorAll("html");
+        console.log(all);
+        let h1 = document.createElement("h1");
+        h1.textContent = "hello tag script!";
+        h1.style.backgroundColor = "green";
+        h1.id = "title";
+        h1.className = "title";
+        h1.classList.add("title2");
+        h1.setAttribute("message", "mymsg");
+        h1.setAttribute("data-user-Id", "admin");
+        all[0].querySelector("body").appendChild(h1);
+
+        console.log(h1.dataset.userId);
+
+        /*
+        document.querySelector();
+        document.getElementById();
+        document.getElementsByClassName();
+        document.getElementsByName();
+        document.getElementsByTagName();
+        */
+    </script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const xmlHttp = new XMLHttpRequest();
+        let method = "get";
+        let api_key = "xxxxxxxxxxxxxxxxxxxxxxxx";   //api키
+        let targetDt = "20250520";  //가져올 정보의 날짜
+        let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${api_key}&targetDt=${targetDt}`
+        xmlHttp.open(method, url);
+        xmlHttp.send();
+        xmlHttp.onload = function() {
+            let data = JSON.parse(xmlHttp.responseText);
+            //console.log(data.boxOfficeResult.dailyBoxOfficeList[0].movieNm);
+            for (let i = 0; i < 10; i++) {
+                ["rank", "rankInten", "movieNm"].forEach(element => {
+                    console.log(data.boxOfficeResult.dailyBoxOfficeList[i][element]);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
