@@ -1,4 +1,4 @@
-# HTML
+# HTML / CSS / JavaScript
 ### 5/8
 ```
 html 문서의 기본 요소
@@ -77,4 +77,13 @@ json에 작성된 특정 문자열 찾기
 table에 createElement를 사용하여 행 추가
 bootstrap cdn 추가 해보기
 외부 json파일을 읽어 테이블에 추가해보기
+```
+### 5/21
+```
+api키 발급 및 json 파일 읽어오기
+<select>태그 반복 처리
+api키 특정 날짜의 json파일 목록 출력 실습
+EventListener(change)를 통해 UX 향상시키기
+javascript내에서 id와 class 및 style 변경
+node.js 간단히 다뤄보기
 ```
