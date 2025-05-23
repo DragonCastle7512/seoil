@@ -96,3 +96,11 @@ webpack 만들기
 - css와 js 링크를 포함한 2개의 배포 파일
 react 간단히 다뤄보기
 ```
+### 5/23
+```
+5/23
+react 구조 및 문법 살펴보기
+react 페이지 수정 및 서버 실행
+useState, useEffect 다루기
+react 환경에서 JSON 파일 다루기
+```
