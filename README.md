@@ -98,7 +98,6 @@ react 간단히 다뤄보기
 ```
 ### 5/23
 ```
-5/23
 react 구조 및 문법 살펴보기
 react 페이지 수정 및 서버 실행
 useState, useEffect 다루기
