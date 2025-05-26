@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let jumin = "010501-3395720";
+        let year = jumin.substring(0, 2);
+        let month = jumin.substring(2, 4);
+        let day = jumin.substring(4, 6);
+        //생년월일 추출 2001년 05월 01일
+        let d = [];
+        for(let i=0; i<3; i++)
+            d[i] = (jumin.substring(i*2, i*2+2));
+        for (const ele of d)
+            console.log(ele);
+        console.log(`20${d[0]}년 ${d[1]}월 ${d[2]}일`);
+
+        let idx = jumin.indexOf("-");
+        // let gender = jumin.substring(idx+1, idx+2);
+        let gender = jumin[idx+1];
+        gender = parseInt(gender)%2 === 0 ? "여" : "남";
+        console.log(gender);
+
+        let data = "kim, park, hong, lee";
+        let darr = data.split(",");
+        for (const s of darr) {
+            console.log(s);
+            if(s.trim() === "lee") console.log("검색성공");
+        }
+        console.log(jumin.length);
+        console.log(darr.length);
+        // 주요 함수
+        // substring(), indexOf(), charAt(), trim(), length
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

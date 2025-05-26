@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myfunc() {
+            for (let i = 1; i < 10; i++)
+                document.write(`2x${i}=${i*2}<br>`);
+        }
+        /*
+        alert(screen.width+", "+screen.height);                     //해상도
+        alert(window.innerWidth+", "+window.innerHeight);           //프레임을 포함한 현재 화면 크기
+        alert(document.documentElement.clientWidth+" "+             //프레임을 제외한 현재 화면 크기(document)
+        document.documentElement.clientHeight);
+        */
+       //location.href = "http://127.0.0.1:5500/workspace/html/0526/document.html?a=10&b=20";
+       console.log(location.protocol);
+       console.log(location.host);
+       console.log(location.hostname);
+       console.log(location.port);
+       console.log(location.pathname);              //라우터 역할
+       console.log(location.search);                
+       new URLSearchParams(location.search);
+
+       /* 추가 정보 분리하여 사용 */
+       const queryString = `name=John&age=30`;
+       const params = new URLSearchParams(queryString);
+
+       console.log(params.get('name'));
+       console.log(params.get('age'));
+    </script>
+</head>
+<body>
+    <button onclick="myfunc()">구구단</button>
+</body>
+</html>

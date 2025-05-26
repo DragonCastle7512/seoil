@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //문제점: id와 passward를 입력 후 submit 버튼을 클릭할 시 action을 실행하면 안되는 경우
+        //빈란, 길이, 형식
+        function confirm() {
+            let id = document.getElementById("id");
+            let password = document.getElementById("pwd");
+            if(id.value === "" || password.value === "") {
+                alert("아이디 또는 패스워드가 비어있습니다.");
+                id.focus();
+                return false;
+            }
+            if(id.value.length < 6) {
+                alert("id의 길이가 6자 이상이어야합니다.");
+                id.value = "";
+                id.focus();
+                return false;
+            }
+            let regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=\[\]{};':"\\|,.<>/?]).+$/; 
+            console.log(regex);
+            if(!regex.test(password.value)) {
+                alert("비밀번호는 영대소문자, 숫자, 특수문자가 포함되어야합니다.");
+                password.value = "";
+                password.focus();
+                return false;
+            }
+            return true;
+        }
+        var w;
+        function winopen() {
+            w = window.open("newlogin.html", "winName", "width=400, height=400");
+        }
+        function winclose() {
+            if(w.closed) w.close();
+            else alert("창이 닫힌 상태입니다.");
+        }
+    </script>
+</head>
+<body>
+    <form action="loginproc.html" method="post" onsubmit="return confirm()">
+        <input type="text" name="id" id="id" placeholder="아이디"><br>
+        <input type="password" name="pwd" id="pwd" placeholder="비밀번호"><br>
+        <input type="submit" value="로그인">
+    </form>
+    <button onclick="winopen()">로그인창 열기</button>
+    <button onclick="winclose()">로그인창 닫기</button>
+</body>
+</html>

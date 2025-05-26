@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let reg = new RegExp("is");
+        let str = "THis is test string";
+        console.log(reg.test(str));
+        // console.log(str.test(reg)); //오류, 정규식, test(문자열)
+        console.log(str.match(reg));    //문자열 -> match()
+
+        console.log("Is it working? This is myjob".match(/is/));
+        console.log("Is it working? This is myjob".match(/is/i));
+        console.log("Is it working? This is myjob".match(/are/));
+        console.log("Is it working? This is myjob".match(/is/gi));
+        let arr =   "Is it working? This is myjob".match(/is/g);
+        console.log(arr[0]);
+
+        let str2 =
+        `THis is test
+        Is the start of line!!
+        is is is`.match(/^is/m); // /^/ 캐럿은 처음시작하는 문자
+        console.log(str2);
+
+        //전화번호 정규식
+        console.log("010-1111-1111".match(/(\d{3})-(\d{4})-(\d{4})/));
+
+        //이메일 정규식
+        console.log("a12d".match(/[a-zA-Z0-9]/));
+        console.log(/[a-zA-Z0-9]/.test("a"));
+        console.log(`조건${(/[a-zA-Z0-9]/.test("a")) ? "만족" : "불만족"}!!`);
+        console.log("abc".match(/[^a-z]/));   //범위[] 앞에서 ^는 부정을 의미
+    </script>
+</head>
+<body>
+
+</body>
+</html>

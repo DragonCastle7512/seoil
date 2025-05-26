@@ -103,3 +103,11 @@ react 페이지 수정 및 서버 실행
 useState, useEffect 다루기
 react 환경에서 JSON 파일 다루기
 ```
+### 5/26
+```
+로그인 화면 구현
+시간 관련 함수(setInterval(), setTimeout() 등)
+문자열 함수
+정규식
+window, document, location 객체
+```
