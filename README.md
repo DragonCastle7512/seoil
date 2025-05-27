@@ -111,3 +111,10 @@ react 환경에서 JSON 파일 다루기
 정규식
 window, document, location 객체
 ```
+### 5/27
+```
+bootstrap 다루기
+bootstrap을 이용한 간단한 페이지 구성
+javascript 기초 문법
+객체, JSON, 배열, 함수
+```
