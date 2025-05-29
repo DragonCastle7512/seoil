@@ -121,5 +121,11 @@ javascript 기초 문법
 ### 5/28
 ```
 화면 구성 시험
-class
+javascript class
+```
+### 5.29
+```
+자바 컴파일 과정(java파일 -> javac컴파일 -> class파일 생성)
+서블릿 처리과정(webapps/Root/WEB-INF 서블릿 경로)
+이클립스 dynamic web - jsp 파일 다루어보기
 ```
