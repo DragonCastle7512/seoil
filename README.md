@@ -129,3 +129,9 @@ javascript class
 서블릿 처리과정(webapps/Root/WEB-INF 서블릿 경로)
 이클립스 dynamic web - jsp 파일 다루어보기
 ```
+### 5.30
+```
+Servlet을 이용하여 서버 구축
+index.html을 java로 구성(PrintWriter)
+한글 깨짐 방지 방법
+```
