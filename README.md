@@ -123,7 +123,7 @@ javascript 기초 문법
 화면 구성 시험
 javascript class
 ```
-#JSP
+# JSP
 ### 5/29
 ```
 자바 컴파일 과정(java파일 -> javac컴파일 -> class파일 생성)
