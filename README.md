@@ -136,3 +136,13 @@ Servlet을 이용하여 서버 구축
 index.html을 java로 구성(PrintWriter)
 한글 깨짐 방지 방법
 ```
+### 6/2
+```
+h2 database를 사용한 db 다루기
+VO객체 생성 및 DAO 생성
+@Test를 이용한 단위 테스트
+jsp에서 db 조회 및 출력
+1. 반복되는 html 코드 전부 jsp문법으로 작성
+2. 데이터만 phonebook 클래스로 받아서 반복
+3. 라우터를 사용하여 반복
+```
