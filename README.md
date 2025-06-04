@@ -151,3 +151,13 @@ h2 database -> oracle로 바뀌었을 때 코드 수정
 삽입, 전체 조회, id를 통한 조회, 수정, 삭제에 대한 페이지 구현
 -> Controller를 거치는 방식
 ```
+### 6/4
+```
+phonebook의 oracle <-> h2 database로 변경
+파일 업로드
+maven repository에서 cos 라이브러리로 파일 받아오기
+원본 파일이름과 정책에 의한 파일이름(getOriginalFileName(), getFilesystemName())
+여러개의 파일 업로드(multiple 속성)
+이클립스 내에서 DB 다루기
+MVC 패턴의 개념 및 phonebook에 일부 적용
+```
