@@ -123,8 +123,7 @@ javascript 기초 문법
 화면 구성 시험
 javascript class
 ```
-# JSP
-### 5/29
+### 5.29
 ```
 자바 컴파일 과정(java파일 -> javac컴파일 -> class파일 생성)
 서블릿 처리과정(webapps/Root/WEB-INF 서블릿 경로)
