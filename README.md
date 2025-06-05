@@ -161,3 +161,13 @@ maven repository에서 cos 라이브러리로 파일 받아오기
 이클립스 내에서 DB 다루기
 MVC 패턴의 개념 및 phonebook에 일부 적용
 ```
+### 6/5
+```
+phonebook_v2 수정 사항
+1) 이미지 업로드 기능 추가
+2) controller - service - dao - db구조로 변경
+3) 모든 jsp 호출을 controller에서 모두 처리
+4) <% %> 코드를 최대한 없애고 일반 tag로 변경(JSTL 라이브러리)
+5) 코드 리펙토링(반복 제거)
+c:forEach, c:if 태그
+```
