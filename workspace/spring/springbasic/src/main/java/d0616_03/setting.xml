@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 성적 정보 설정 -->
+	<bean id="sung" class="d0616_03.Sungjuk">
+		<constructor-arg value="80"/>
+		<constructor-arg value="90"/>
+		<constructor-arg value="100"/>
+	</bean>
+	<!-- 출력 정보 설정 -->
+	<bean id="printInfo" class="d0616_03.PrintInfo">
+		<constructor-arg value="1"/>
+		<constructor-arg value="hongkildong"/>
+		<constructor-arg ref="sung"/>
+	</bean>
+	<!-- print할 모듈 선택(console, grid) -->
+	<bean id="print" class="d0616_03.ConsolePrint">
+		<constructor-arg ref="printInfo"/>
+	</bean>
+	<!-- 학생 정보 설정 -->
+	<bean id="student" class="d0616_03.Student">
+		<property name="printInfo" ref="printInfo"/>
+		<property name="print" ref="print"/>
+	</bean>
+</beans>
