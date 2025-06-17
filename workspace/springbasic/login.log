@@ -1,0 +1,8 @@
+6월 17, 2025 9:38:55 오후 d0617_04.Main3 main
+SEVERE: Cannot invoke "String.equals(Object)" because "id" is null
+6월 17, 2025 9:42:25 오후 d0617_04.Main3 main
+SEVERE: Cannot invoke "String.equals(Object)" because "id" is null
+6월 17, 2025 9:42:36 오후 d0617_04.Main3 main
+WARNING: login fail:,1234
+6월 17, 2025 9:42:42 오후 d0617_04.Main3 main
+INFO: login success
