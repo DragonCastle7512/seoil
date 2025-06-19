@@ -12,17 +12,16 @@ import org.springframework.stereotype.Repository;
 
 import vo.Phonebook;
 
-/*
 @Repository
-public class OracleDAOPhonebook implements PhonebookInter {
+public class H2DAOPhonebook implements PhonebookInter {
 
 	@Autowired
 	DataSource ds;
-
+	
 	@Override
 	public int save(Phonebook pb) {
 		int result = 0;
-		String sql = "insert into phonebook values(pb_id_seq.nextval, ?, ?, ?, ?)";
+		String sql = "insert into phonebook values(NEXT VALUE FOR pb_id_seq, ?, ?, ?, ?)";
 		try {
 			PreparedStatement pstmt = ds.getConnection().prepareStatement(sql);
 			String[] ele = {pb.getName(), pb.getHp(),pb.getEmail(), pb.getMemo()};
@@ -116,4 +115,4 @@ public class OracleDAOPhonebook implements PhonebookInter {
 		return result;
 	}
 
-}*/
+}
