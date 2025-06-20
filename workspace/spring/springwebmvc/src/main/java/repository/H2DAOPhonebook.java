@@ -21,7 +21,7 @@ public class H2DAOPhonebook implements PhonebookInter {
 	@Override
 	public int save(Phonebook pb) {
 		int result = 0;
-		String sql = "insert into phonebook values(NEXT VALUE FOR pb_id_seq, ?, ?, ?, ?)";
+		String sql = "insert into phonebook(name, hp, email, memo) values(?, ?, ?, ?)";
 		try {
 			PreparedStatement pstmt = ds.getConnection().prepareStatement(sql);
 			String[] ele = {pb.getName(), pb.getHp(),pb.getEmail(), pb.getMemo()};
@@ -73,7 +73,6 @@ public class H2DAOPhonebook implements PhonebookInter {
 				pb.setMemo(rs.getString("memo"));
 				return pb;
 			}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -107,7 +106,6 @@ public class H2DAOPhonebook implements PhonebookInter {
 			PreparedStatement pstmt = ds.getConnection().prepareStatement(sql);
 			pstmt.setInt(1, id);
 			result = pstmt.executeUpdate();
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return -1;
