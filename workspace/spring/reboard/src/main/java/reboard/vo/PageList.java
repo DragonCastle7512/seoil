@@ -25,5 +25,6 @@ public class PageList {
 	private int endPage;			//네비게이트 끝번호
 	private boolean isPre;			//네비게이트 이전표시여부
 	private boolean isNext;			//네비게이트 다음표시여부
+	private String attachment;
 	private List<ReBoard> list;	//게시판 페이지 리스트
 }

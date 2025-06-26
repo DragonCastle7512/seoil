@@ -46,13 +46,19 @@ public class H2ReBoardDAO2 implements ReBoardDAO {
 	}
 
 	@Override
-	public List<ReBoard> findAll() {
+	public int count() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 	@Override
-	public int count() {
+	public int viewCountup(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int replySave(ReBoard reboard) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>ds</h1>
+<!-- spring에서 이미지 필터 처리됨 -->
+<img src="/images/file.png" alt="파일이미지" width="100px";>
 </body>
 </html>

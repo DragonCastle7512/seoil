@@ -1,15 +1,22 @@
 package reboard.service;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import reboard.repository.ReBoardDAO;
+import reboard.vo.BoardForm;
+import reboard.vo.BoardViewPage;
 import reboard.vo.PageList;
 import reboard.vo.ReBoard;
+import reboard.vo.ReplyBoardForm;
 
 @Service
 public class ReboardService {
@@ -50,6 +57,7 @@ public class ReboardService {
 						.viewcnt(board.getViewcnt())
 						.parentid(board.getParentid())
 						.tab(board.getTab())
+						.attachment(board.getAttachment())
 						.build();
 				boardLists.add(boardlist);
 			}
@@ -59,5 +67,78 @@ public class ReboardService {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	public void write(BoardForm form, MultipartFile file) {
+		String path = "C:/storage";
+		String filename = file.getOriginalFilename();
+		String fullName = path+filename;
+		try {
+			file.transferTo(new File(fullName));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		ReBoard board = ReBoard.builder()
+				.title(form.getTitle())
+				.content(form.getContent())
+				.author(form.getAuthor())
+				.attachment(filename)
+				.build();
+		dao.save(board);
+	}
+
+	public BoardViewPage getViewPage(int id) {
+		dao.viewCountup(id);
+		ReBoard board = dao.findById(id);
+		BoardViewPage page = BoardViewPage.builder()
+				.id(board.getId())
+				.title(board.getTitle())
+				.content(board.getContent())
+				.author(board.getAuthor())
+				.attachment(board.getAttachment())
+				.viewcnt(board.getViewcnt())
+				.tab(board.getTab())
+				.build();
+		page.setDate((board.getUpdatedate() == null) ? board.getCreateDate() : board.getUpdatedate());
+		return page;
+	}
+	public int replySave(ReplyBoardForm form, MultipartFile file) {
+		String path = "C:/storage";
+		String filename = file.getOriginalFilename();
+		String fullName = path+filename;
+		try {
+			file.transferTo(new File(fullName));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		ReBoard board = ReBoard.builder()
+				.title(form.getTitle())
+				.content(form.getContent())
+				.author(form.getAuthor())
+				.parentid(form.getParentid())
+				.attachment(filename)
+				.tab(dao.findById(form.getParentid()).getTab()+1)
+				.build();
+		return dao.replySave(board);
+	}
+	public int update(BoardForm form, MultipartFile file) {
+		String path = "C:/storage";
+		String filename = file.getOriginalFilename();
+		String fullName = path+filename;
+		try {
+			file.transferTo(new File(fullName));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		ReBoard board = ReBoard.builder()
+				.title(form.getTitle())
+				.content(form.getContent())
+				.author(form.getAuthor())
+				.attachment(filename)
+				.build();
+		return dao.update(board);
+	}
+	public int delete(int id) {
+		return dao.delete(id);
 	}
 }

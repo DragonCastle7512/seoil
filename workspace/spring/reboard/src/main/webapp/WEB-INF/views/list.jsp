@@ -30,15 +30,17 @@
         <c:forEach var="board" items="${ page.list }">
         	<tr onclick="location.href='/reboard/view?id=${ board.id }'">
 	          <td name="id">${ board.id }</td>
-	          <td>${ board.parentid }</td>
 	          <td name="title">
 	          		<c:if test="${ board.parentid > 0 }">
 	          			<c:forEach begin="1" end="${ board.tab }" step="1">
-	          				&nbsp;&nbsp;
+	          				<img src="/images/reply_icon.gif" width="20px">
 	          			</c:forEach>
 	          			[댓글]
 	          		</c:if>
 		          ${ board.title }
+		          <c:if test="${ not empty board.attachment }">
+		          	<img src="/images/file.png" width="20px">
+		          </c:if>
 	          </td>
 	          <td name="author">${ board.author }</td>
 	          <td name="createdate"><fmt:formatDate value="${ board.createDate }" pattern="yyyy년 MM월 dd일"/></td>
