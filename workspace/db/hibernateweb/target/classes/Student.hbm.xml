@@ -3,9 +3,10 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="school">
+<hibernate-mapping>
 
-	<class name="Student" table="student">
+	<!-- 웹에서 사용할 경우 경로 반드시 확인 -->
+	<class name="hibernate.Student" table="student">
 
 		<id name="id" type="java.lang.Integer" column="id">
 			<!--  <generator class="assigned" /> -->

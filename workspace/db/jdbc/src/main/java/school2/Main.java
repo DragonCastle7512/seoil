@@ -1,4 +1,4 @@
-package school;
+package school2;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class Main {
 		//1)설정파일 불러오기(등록하기/Registry)
 		StandardServiceRegistry standardServiceRegistry
 		=new StandardServiceRegistryBuilder()
-		.configure("school/hibernate.cfg.xml")
+		.configure("school2/hibernate.cfg.xml")
 		.build();
 		
 		//2)등록된 파일을 정보데이터에 저장(MetaData)

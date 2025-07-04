@@ -17,6 +17,6 @@
 <property name="hbm2ddl.auto">update</property>
 
 <!-- Mapping files (db테이블을 연결하는 설정파일) -->
-<mapping resource="school/Student.hbm.xml" />
+<mapping class="jpa.Student" />
 </session-factory>
 </hibernate-configuration>

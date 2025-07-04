@@ -17,6 +17,12 @@
 <property name="hbm2ddl.auto">update</property>
 
 <!-- Mapping files (db테이블을 연결하는 설정파일) -->
-<mapping resource="school/Student.hbm.xml" />
+<!-- table-java xml로 맵핑시켜주는 파일 -->
+<!-- <mapping resource="school/Student.hbm.xml" /> -->
+<!-- Entity객체인 Student를 맵핑시켜주는 역할을 어노테이션 -->
+<mapping class="school2.Student" />
 </session-factory>
 </hibernate-configuration>
+
+
+

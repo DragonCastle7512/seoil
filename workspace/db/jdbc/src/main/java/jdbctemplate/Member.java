@@ -1,5 +1,7 @@
 package jdbctemplate;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 import lombok.ToString;
 
