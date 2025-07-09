@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+	<security:http auto-config="true" use-expressions="true">
+
+        <security:intercept-url pattern="/css/**" access="permitAll" />
+        <security:intercept-url pattern="/js/**" access="permitAll" />
+        <security:access-denied-handler error-page="/all/403" />
+        
+        <security:intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
+        <security:intercept-url pattern="/user/**" access="hasRole('USER')" />
+       	
+        <security:intercept-url pattern="/all/**" access="hasRole('ADMIN') or hasRole('USER')" />
+        <!-- post방식의 /login 처리 -->
+        <security:form-login 
+        	login-page="/login"
+        	default-target-url="/user/index"
+        	authentication-failure-url="/login?error=true"
+        	username-parameter="username"
+        	password-parameter="password"
+        />
+        <!-- Post방식의 url주소를 의미 -->
+        <security:logout logout-success-url="/login?logout=true" logout-url="/logout" />
+    </security:http>
+
+    <!-- 인증처리: 사용자 정보 -->
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="user" password="{noop}1234" authorities="ROLE_USER" />
+                <security:user name="admin" password="{noop}1234" authorities="ROLE_ADMIN" />
+                <security:user name="root" password="{noop}1234" authorities="ROLE_USER, ROLE_ADMIN" />
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+</beans:beans>
