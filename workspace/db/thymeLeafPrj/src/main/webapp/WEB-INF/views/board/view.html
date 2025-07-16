@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+ layout:decorate="~{fragments/layout}">
+ <head>
+ 	<link href="/css/view.css" rel="stylesheet">
+ </head>
+ <body>
+ <th:block layout:fragment="content">
+  <div class="container mt-5 p-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title mb-3" th:text="${ page.title }"></h2>
+        <h6 class="card-subtitle mb-4 text-muted" th:text="|작성자: ${ page.author }|"></h6>
+        
+        <div class="content-box mb-4" th:text="${ page.content }"></div>
+        <div class="attachment-box mb-4" th:text="|첨부파일: ${ page.attachment }|"></div>
+        <div class="d-flex justify-content-between">
+          <button th:onclick="|location.href='/board/updateform?id=${ page.id }'|" class="btn btn-primary">수정</button>
+          <button th:onclick="|location.href='/board/delete?id=${ page.id }'|" class="btn btn-primary">삭제</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   </th:block>
+  </body>
+
+ 

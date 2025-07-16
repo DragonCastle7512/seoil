@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+ layout:decorate="~{fragments/layout}">
+ <th:block layout:fragment="content">
+  <div class="container p-4">
+    <h2 class="mb-4">📋 게시판</h2>
+    <div th:text="${pageList.totalCount} + '개의 글(' + ${pageList.currentPage} + '/' + ${pageList.totalPage} + ')'"></div>
+    <button class="btn btn-primary" th:onclick="|location.href='/board/writeform'|">글쓰기</button>
+
+    <!-- 게시판 테이블 -->
+    <table class="table table-bordered table-hover text-center align-middle">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">제목</th>
+          <th scope="col">작성자</th>
+          <th scope="col">작성일</th>
+          <th scope="col">조회수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="board : ${pageList.list}" th:onclick="|location.href='/board/view?id=${board.id}'|">
+          <td th:text="${board.id}" name="id"></td>
+          <td th:text="${board.title}" name="title"></td>
+          <td th:text="${board.author}" name="author"></td>
+          <td th:text="${#dates.format(board.createDate, 'yyyy년 MM월 dd일')}" name="createdate"></td>
+          <td th:text="${board.viewcnt}" name="viewcnt"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 페이지 네비게이션 -->
+    <nav aria-label="페이지 네비게이션">
+      <ul class="pagination justify-content-center">
+        <!-- 이전 페이지 -->
+        <li class="page-item" th:classappend="${pageList.pre} ? '' : ' disabled'">
+          <a class="page-link" th:href="@{/board/list(requestPage=${pageList.startPage - pageList.pageCount})}" tabindex="-1">이전</a>
+        </li>
+
+        <!-- 페이지 이동 -->
+        <li class="page-item"
+            th:each="i : ${#numbers.sequence(pageList.startPage, pageList.endPage)}"
+            th:classappend="${i == pageList.currentPage} ? ' active'">
+          <a class="page-link" th:href="@{/board/list(requestPage=${i})}" th:text="${i}"></a>
+        </li>
+
+        <!-- 다음 페이지 -->
+        <li class="page-item" th:classappend="${pageList.next} ? '' : ' disabled'">
+          <a class="page-link" th:href="@{/board/list(requestPage=${pageList.startPage + pageList.pageCount})}">다음</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</th:block>

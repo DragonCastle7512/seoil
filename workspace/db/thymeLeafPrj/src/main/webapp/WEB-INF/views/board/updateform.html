@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+
+<body class="bg-light">
+  <th:block layout:fragment="content">
+    <div class="container mt-5">
+      <h2 class="mb-4">정보 입력 폼</h2>
+      <form th:action="@{/board/update}" method="post" class="border p-4 rounded bg-white shadow-sm">
+
+        <input type="text" class="form-control" id="id" name="id" th:value="${page.id}" hidden>
+
+        <div class="mb-3">
+          <label for="title" class="form-label">제목</label>
+          <input type="text" class="form-control" id="title" name="title" th:value="${page.title}">
+        </div>
+
+        <div class="mb-3">
+          <label for="author" class="form-label">작성자</label>
+          <input type="text" class="form-control" id="author" name="author" th:value="${page.author}">
+        </div>
+
+        <div class="mb-3">
+          <label for="content" class="form-label">내용</label>
+          <textarea class="form-control" id="content" name="content" rows="4"
+                    th:text="${page.content}"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="attachment" class="form-label">붙임</label>
+          <input type="text" class="form-control" id="attachment" name="attachment" th:value="${page.attachment}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">수정</button>
+        <a th:href="@{/'/'}" class="btn btn-outline-primary">
+          <i class="bi bi-house-door-fill"></i> Home
+        </a>
+      </form>
+    </div>
+  </th:block>
+</body>
+</html>

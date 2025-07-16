@@ -1,0 +1,17 @@
+@charset "UTF-8";
+ .content-box {
+   white-space: pre-wrap;
+   line-height: 1.6;
+ }
+ .card-title {
+   font-size: 1.75rem;
+   font-weight: bold;
+ }
+ .card-subtitle {
+   color: #666;
+ }
+ .attachment-box {
+   background-color: #f8f9fa;
+   padding: 10px;
+   border-radius: 6px;
+ }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="board"/>
+	<mybatis-spring:scan base-package="board"/>
+	
+	<beans:bean id="templateResolverLogin" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/board/" />
+        <beans:property name="suffix" value=".html" />
+        <beans:property name="templateMode" value="HTML" />
+        <beans:property name="characterEncoding" value="UTF-8" />
+        <beans:property name="order" value="1" />
+        <beans:property name="checkExistence" value="true" />
+     </beans:bean>
+     <beans:bean id="templateResolverFragment" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/" />
+        <beans:property name="suffix" value=".html" />
+        <beans:property name="templateMode" value="HTML" />
+        <beans:property name="characterEncoding" value="UTF-8" />
+        <beans:property name="order" value="2" />
+        <beans:property name="checkExistence" value="true" />
+     </beans:bean>
+
+    <beans:bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <beans:property name="templateResolvers">
+        	<beans:set>
+        		<beans:ref bean="templateResolverLogin" />
+        		<beans:ref bean="templateResolverFragment" />
+        	</beans:set>
+        </beans:property>
+        <beans:property name="enableSpringELCompiler" value="true" />
+        <beans:property name="additionalDialects">
+        <beans:set>
+        	<beans:ref bean="layoutDialect"/>
+        </beans:set>
+        </beans:property>    
+    </beans:bean>
+    <beans:bean id="layoutDialect" class="nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect"/>
+
+    <beans:bean id="thymeleafViewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <beans:property name="templateEngine" ref="templateEngine" />
+        <beans:property name="characterEncoding" value="UTF-8" />
+        <beans:property name="order" value="1" />
+        <beans:property name="viewNames" value="*" />
+    </beans:bean>
+</beans:beans>

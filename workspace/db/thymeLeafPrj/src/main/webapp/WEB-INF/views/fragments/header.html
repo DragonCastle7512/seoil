@@ -1,0 +1,45 @@
+<!-- header fragment -->
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <th:block th:fragment="header">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" th:href="@{/}">📚 MySite</a>
+
+          <!-- 모바일 토글 버튼 -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 메뉴 목록 -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/board/list}">BOARD</a>
+              </li>
+			  <li class="nav-item">
+			  <a class="nav-link" th:href="@{/login/login}">LOGIN</a>
+			  	<!-- <sec:authorize access="isAuthenticated()">
+			    	<a class="nav-link" th:href="@{/logout}">LOGOUT</a>
+			    </sec:authorize>
+			    <sec:authorize access="!isAuthenticated()">
+			    	<a class="nav-link" th:href="@{/login/login}">LOGIN</a>
+			    </sec:authorize> -->
+			  </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div>
+      </div>
+    </header>
+  </th:block>
+</html>
