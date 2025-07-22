@@ -44,13 +44,16 @@ for(let i=0; i<4; i++) {
 	numberList.appendChild(li);
 	countupList.appendChild(buttonLi);
 }
-
 </script>
 <script>
-websocket.onmessage = function(num){
-	console.log(num);
-	const li = numberList.querySelectorAll("li")[parseInt(num.data)];
-	li.innerText = parseInt(li.innerText) + 1;
+websocket.onstart = function() {
+	websocket.send(0);
+}
+websocket.onmessage = function(nums) {
+	const arr = nums.data.split(',');
+	console.log(arr);
+	for(let i=0; i<4; i++)
+		numberList.querySelectorAll("li")[i].innerText = arr[i];
 }
 </script>
 </body>

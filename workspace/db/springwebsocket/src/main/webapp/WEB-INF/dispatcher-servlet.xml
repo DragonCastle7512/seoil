@@ -9,10 +9,11 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-    <websocket:handlers>
+	<!-- 자바 설정파일로 대체 -->
+    <!-- <websocket:handlers>
         <websocket:mapping handler="MyWebsocket" path="/websocket"/>
     </websocket:handlers>
-    <bean id="MyWebsocket" class="websocket.MyWebsocket" />
+    <bean id="MyWebsocket" class="websocket.MyWebsocket" /> -->
     
     <context:component-scan base-package="websocket"/>
     <mvc:annotation-driven/> <!-- spring security, websocket 등에서 무조건 사용 -->
