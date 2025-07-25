@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="register.MemberMapper">
+ <insert id="save" parameterType="register.Member">
+ 	insert into members(id, name, username, password, email, role) values(members_id_seq.nextval, #{name}, #{username}, #{password}, #{email}, #{role})
+ </insert> 
+ <select id="findByUsername" resultType="register.Member">
+ 	select username, password, role from members where username=#{username}
+ </select>
+ </mapper>

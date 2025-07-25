@@ -1,0 +1,43 @@
+<th:block xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+ 	layout:decorate="~{fragments/layout}"
+ 	layout:fragment="content"> 	
+<script>
+fetch('/restapi/list', {
+	method: 'GET',
+})
+.then(response => {
+	return response.json()
+})
+.then(result => {
+	const tbody = document.querySelector("tbody");
+	for (var i = 0; i < result.length; i++) {
+		const tr = document.createElement("tr");
+		for (let value of ["id", "name", "username", "email", "phone"]) {
+			const td = document.createElement("td");
+			td.innerText = result[i][value];
+			tr.appendChild(td);
+		}
+		tbody.appendChild(tr);
+	}
+});
+</script>
+<div sec:authorize="!isAnonymous()">
+<table class="table table-light table-hover table-bordered table-striped">
+  <thead class="text-center">
+    <tr>
+      <th>아이디</th>
+      <th>이름</th>
+      <th>닉네임</th>
+      <th>이메일</th>
+      <th>전화번호</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+</div>
+<div sec:authorize="isAnonymous()">
+	<h1>🔒로그인 후 열람 가능합니다!</h1>
+</div>
+</th:block>

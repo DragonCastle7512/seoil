@@ -1,0 +1,93 @@
+<th:block xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+ 	layout:decorate="~{fragments/layout}"
+ 	layout:fragment="content">
+	<div class="container" style="max-width: 800px;">
+  <h5 class="border-bottom-2 pb-2">회원가입 양식</h5>
+  <form th:action="@{/register}" method="post" class="bg-light border p-1" onsubmit="return isValid();">
+
+    <div class="row mb-3 align-items-center">
+      <label class="col-sm-3 col-form-label text-end">이름</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="name">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row mb-3 align-items-center">
+      <label class="col-sm-3 col-form-label text-end">아이디</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="username" id="username">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row mb-3 align-items-center">
+      <label class="col-sm-3 col-form-label text-end">비밀번호</label>
+      <div class="col-sm-4">
+        <input type="password" class="form-control" name="password" id="password">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row mb-3 align-items-center">
+      <label class="col-sm-3 col-form-label text-end">비밀번호 확인</label>
+      <div class="col-sm-4">
+        <input type="password" class="form-control" id="check-password">
+      </div>
+      <div class="col-sm-4">
+        <button type="button" onclick="isSamePassword()" class="btn btn-outline-dark">비밀번호 확인</button>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row mb-4 align-items-center">
+      <label class="col-sm-3 col-form-label text-end">이메일</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" name="email">
+      </div>
+    </div>
+    <hr>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+    <div class="d-flex justify-content-center gap-2">
+      <a th:href="@{/}" class="btn btn-outline-secondary px-4">가입 취소</a>
+      <button type="submit" class="btn btn-dark px-4">회원가입</button>
+    </div>
+  </form>
+</div>
+<script>
+function isSamePassword() {
+	const checkPassword = document.getElementById("check-password").value;
+	const password = document.getElementById("password").value
+	if(checkPassword.length === 0 || password.length === 0) {
+		alert('비밀번호를 입력해주세요');
+		return;
+	}
+	alert('비밀번호가 일치'+(checkPassword === password ? '합니다.': '하지 않습니다.'))
+}
+function isValid() {
+	const checkPassword = document.getElementById("check-password").value;
+	const password = document.getElementById("password").value
+	const username = document.getElementById("username").value
+	if(username.length === 0) {
+		alert('아이디를 입력해주세요');
+		return false;
+	}
+	if(checkPassword.length === 0 || password.length === 0) {
+		alert('비밀번호를 입력해주세요');
+		return false;
+	}
+	if(password !== checkPassword) {
+		alert('비밀번호가 일치하지 않습니다.');
+		return false;
+	}
+	const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).*$/;
+	 if(!regex.test(password)) {
+		 alert('영문대소문자/숫자/특수문자를 포함해주세요.')
+		 return false;
+	 }
+	return true;
+}
+</script>
+</th:block>

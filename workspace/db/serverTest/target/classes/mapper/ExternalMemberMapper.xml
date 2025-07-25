@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="restapi.ExternalMemberMapper">
+ <insert id="save" parameterType="restapi.ExternalMember">
+ 	insert into external_members(id, name, username, email, phone) values(#{id}, #{name}, #{username}, #{email}, #{phone})
+ </insert> 
+ <select id="findAll" resultType="restapi.ExternalMember">
+ 	select * from external_members order by id
+ </select>
+ <delete id="deleteAll">
+ 	delete from external_members
+ </delete>
+ </mapper>
