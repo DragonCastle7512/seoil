@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link href="/css/style.css" rel="stylesheet">
+	<script src="/js/main.js"></script>
+	<script>
+	/*
+		fetch("http://localhost:8888/api/person/19", {
+			method: "DELETE",
+		}).then(response => {
+			if(response.ok) {
+				return response.text();
+			} else {
+				throw new Error("삭제 실패! 상태 코드: "+response.status);
+			}
+		}).then(data => {
+			console.log("서버 응답: ", data);
+			document.querySelector("body").textContent = data;
+		}).catch(error => {
+			console.log("에러 방생: ", error);
+			document.querySelector("body").textContent = error;
+		});
+		*/
+		/*
+		const person = {name:"user100",email:"user100@gmail.com"};
+		fetch("http://localhost:8888/api/person", {
+			method: "POST",
+			headers: {"Content-Type":"application/json"},
+			body: JSON.stringify(person)
+		}).then(response => {
+			if(response.ok) {
+				return response.text();
+			} else {
+				throw new Error("입력 실패! 상태 코드: "+response.status);
+			}
+		}).then(data => {
+			console.log("서버 응답: ", data);
+			document.querySelector("body").textContent = data;
+		}).catch(error => {
+			console.log("에러 방생: ", error);
+			document.querySelector("body").textContent = error;
+		});*/
+		
+		/*
+		const newPerson = {id:"21", name:"user210",email:"user210@gmail.com"};
+		fetch("http://localhost:8888/api/person", {
+			method: "PUT",
+			headers: {"Content-Type":"application/json"},
+			body: JSON.stringify(newPerson)
+		}).then(response => {
+			if(response.ok) {
+				return response.text();
+			} else {
+				throw new Error("수정 실패! 상태 코드: "+response.status);
+			}
+		}).then(data => {
+			console.log("서버 응답: ", data);
+			document.querySelector("body").textContent = data;
+		}).catch(error => {
+			console.log("에러 방생: ", error);
+			document.querySelector("body").textContent = error;
+		});
+		*/
+		
+		/*
+		deletePerson(18);
+		async function deletePerson(id) {
+			try {
+				const response = await fetch(`http://localhost:8888/api/api/person/${id}`, {
+					method: "DELETE",
+				});
+				if(!response.ok) {
+					throw new Error(`삭제 실패! 상태 코드: ${response.status}`);
+				}
+				const result = await response.text();
+				console.log("삭제 성공:", result);
+			} catch(error) {
+				console.error("에러 발생:", error.message);
+			}
+		}
+		*/
+		
+		fetch("http://localhost:8888/api/persons", {
+			method: "GET",
+		}).then(response => {
+			if(response.ok) {
+				return response.json();
+			} else {
+				throw new Error("삭제 실패! 상태 코드: "+response.status);
+			}
+		}).then(data => {
+			console.log("서버 응답: ", data);
+			//document.querySelector("body").textContent = data;
+			const root = document.querySelector("body");
+			let content=""
+			for(i=0; i<data.length; i++) {
+				content = "<ul>"+
+					"<li>"+data[i]["id"]+"</li>"+
+					"<li>"+data[i]["name"]+"</li>"+
+					"<li>"+data[i]["email"]+"</li>"+
+					"</ul>";
+				root.innerHTML += content;
+			}
+			
+		}).catch(error => {
+			console.log("에러 방생: ", error);
+			document.querySelector("body").textContent = error;
+		});
+	</script>
+</head>
+<body>
+    <h1>index.html</h1>
+	
+</body>
+</html>

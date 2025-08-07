@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--	<link href="/css/style.css" rel="stylesheet">
+	<script src="/js/main.js"></script>-->
+	<script>
+		function del() {
+			const id = document.querySelector("input").value;
+			fetch(`http://localhost:8888/api/member/${id}`, {
+				method: "DELETE",
+			}).then(response => {
+				if(response.ok) {
+					return response.text();
+				} else {
+					throw new Error("삭제 실패! 상태 코드: "+response.status);
+				}
+			}).then(data => {
+				console.log("서버 응답: ", data);
+				//document.querySelector("body").textContent = data;
+				render();
+			}).catch(error => {
+				console.log("에러 방생: ", error);
+				document.querySelector("body").textContent = error;
+			});
+		}
+		
+		let cnt = localStorage.getItem("cnt") ? parseInt(localStorage.getItem("cnt")) : 0;
+		function addUser() {
+			const person = {username:`user${cnt}`, password:`111${cnt}`, email:`user${cnt}@gmail.com`, role:"ROLE_USER"};
+			localStorage.setItem("cnt", cnt+1);
+			fetch("http://localhost:8888/api/member", {
+				method: "POST",
+				headers: {"Content-Type":"application/json"},
+				body: JSON.stringify(person)
+			}).then(response => {
+				if(response.ok) {
+					return response.text();
+				} else {
+					throw new Error("입력 실패! 상태 코드: "+response.status);
+				}
+			}).then(data => {
+				console.log("서버 응답: ", data);
+				//document.querySelector("body").textContent = data;
+				render();
+			}).catch(error => {
+				console.log("에러 방생: ", error);
+				document.querySelector("body").textContent = error;
+			});
+		}
+		/*
+		const newMember = {id:"21", username:"user222", password:"2222", email:"user2@gmail.com", role:"ROLE_USER"};
+		fetch("http://localhost:8888/api/member", {
+			method: "PUT",
+			headers: {"Content-Type":"application/json"},
+			body: JSON.stringify(newMember)
+		}).then(response => {
+			if(response.ok) {
+				return response.text();
+			} else {
+				throw new Error("수정 실패! 상태 코드: "+response.status);
+			}
+		}).then(data => {
+			console.log("서버 응답: ", data);
+			document.querySelector("body").textContent = data;
+		}).catch(error => {
+			console.log("에러 방생: ", error);
+			document.querySelector("body").textContent = error;
+		});
+		*/
+		function detail(id) {
+			fetch(`http://localhost:8888/api/member/${id}`, {
+				method: "GET"
+			}).then(resp => {
+				if(resp.ok) {
+					return resp.json();
+				} else {
+					throw new Error("삭제 실패! 상태 코드: "+resp.status);
+				}
+			}).then(data => {
+				console.log(data);
+				document.getElementById("content").innerHTML =
+				"<ul>"+
+					"<li>"+data["id"]+"</li>"+
+					"<li>"+data["username"]+"</li>"+
+					"<li>"+data["password"]+"</li>"+
+					"<li>"+data["email"]+"</li>"+
+					"<li>"+data["role"]+"</li>"+
+				"</ul>"+
+				"<button onclick='render()'>나가기</button>";
+			})
+		}
+		render();
+		function render() {
+			fetch("http://localhost:8888/api/members", {
+				method: "GET",
+			}).then(response => {
+				if(response.ok) {
+					return response.json();
+				} else {
+					throw new Error("삭제 실패! 상태 코드: "+response.status);
+				}
+			}).then(data => {
+				console.log("서버 응답: ", data);
+				//document.querySelector("body").textContent = data;
+				const content = document.getElementById("content");
+				content.innerHTML = "";
+				for(i=0; i<data.length; i++) {
+					const id = data[i]["id"];
+					content.innerHTML += 
+					  `<ul onclick="detail(${id})">` +
+					    `<li>${id}</li>` +
+					    `<li>${data[i]["username"]}</li>` +
+					    `<li>${data[i]["password"]}</li>` +
+					    `<li>${data[i]["email"]}</li>` +
+					    `<li>${data[i]["role"]}</li>` +
+					  `</ul>`;
+				}
+				
+			}).catch(error => {
+				console.log("에러 방생: ", error);
+				document.querySelector("body").textContent = error;
+			});
+		}
+	</script>
+</head>
+<body>
+    <h1>index.html</h1>
+	<button onclick="addUser()">사용자 추가</button><br>
+	삭제할 아이디:<input type="text">
+	<button onclick="del()">삭제</button>
+	<div id="content"></div>
+</body>
+</html>
